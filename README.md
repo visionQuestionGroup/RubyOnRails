@@ -3,7 +3,7 @@
 ## Access Token
 * Every request requires an authentication token to be provided in the header.
 
-## Sign up
+## Sign up and Login
 
 ### New user registration
 
@@ -25,10 +25,7 @@
 ```
 {
 	"username": "whatever",
-	"first_name": "rickard",
-	"last_name": "sunden",
-	"email": "hey@hey.com",
-	"password": "mypassword"
+  "access_token": "102931afffksdfjklss"
 }
 ```
 
@@ -39,8 +36,48 @@
 
 ```
 {
-	"username": "whatever",
-	"token": "102931afffksdfjklss",
+
+
+}
+```
+
+### User login
+
+* Path: POST `'/users/login'`
+
+* Parameters:
+  * username: a string
+  * password: a string
+
+
+* Response success
+  * Status Code: 201
+
+* Example data response:
+
+```
+{
+  "username": "whatever",
+  "access_token": "102931afffksdfjklss"
+}
+```
+
+### User logout
+
+* Path: POST `'/users/logout'`
+
+* Parameters:
+  * auth_token: a string
+
+
+* Response success
+  * Status Code: 201
+
+* Example data response:
+
+```
+{
+
 }
 ```
 
@@ -124,6 +161,7 @@
 ```
 {
   "username": "whatever",
+  "link_id": 22,
   "guesses_left": 3,
   "won": false
 }
