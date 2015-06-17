@@ -73,15 +73,9 @@ Need to check with instructor/our group
 }
 ```
 
-### Edit post
-
-* Path: PUT `'/posts/:id'`
-
-### Delete post
-
-* Path: DELETE 
-
 ### List all of posts from specific user
+
+* Path: GET `'/:username/posts/'`
 
 ### Lists of posts from all users
 
@@ -100,6 +94,7 @@ Need to check with instructor/our group
   "id": 1,
   "username": "whatever",
   "image_url": "http://whatever.com/image.jpg",
+  "post_url": "/posts/33",
   "guessed": true
 }
 ```
@@ -108,10 +103,20 @@ Need to check with instructor/our group
 
 ### User can guess
 
-Post request
+* Path: POST `'/:username/posts/:link_id/'`
 
-Returns yes if user has guessed right, and returns answer?
-Returns all guesses a user has made on a post?
+* Response success:
+  * Status code: 200
+
+* Example data response:
+
+```
+{
+  "username": "whatever",
+  "guesses_left": 3,
+  "won": false
+}
+```
 
 ## Scoreboard
 
