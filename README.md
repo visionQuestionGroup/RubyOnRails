@@ -79,6 +79,8 @@ Need to check with instructor/our group
 
 ### Delete post
 
+* Path: DELETE 
+
 ### List all of posts from specific user
 
 ### Lists of posts from all users
@@ -114,3 +116,24 @@ Returns all guesses a user has made on a post?
 ## Scoreboard
 
 ### Get top 10 users for all time
+
+* Path: GET `'/topscores/'`
+
+* Response success:
+  * Status code: 200
+
+
+* Example data response:
+
+```
+[
+{
+  "username": "whatever",
+  "score": 20,
+}
+{
+  "username": "anotheruser",
+  "score": 40,
+}
+]
+```
