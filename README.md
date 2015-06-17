@@ -1,6 +1,9 @@
 # API
 
-## Sign up and Login
+## Access Token
+* Every request requires an authentication token to be provided in the header.
+
+## Sign up
 
 ### New user registration
 
@@ -41,14 +44,6 @@
 }
 ```
 
-### Login user
-
-Need to check with instructor/our group
-
-### Logout user
-
-Need to check with instructor/our group
-
 ## Posts
 
 ### Create post
@@ -77,6 +72,22 @@ Need to check with instructor/our group
 
 * Path: GET `'/:username/posts/'`
 
+* Response success:
+  * Status code: 200
+
+* Example data response:
+
+```
+[
+{
+  "post_id": 2,
+  "username": "whatever",
+  "image_url": "http://whatever.com/image.jpg"
+  "post_url": "/posts/33"
+}
+]
+```
+
 ### Lists of posts from all users
 
 * Path: GET `'/posts/'`
@@ -91,7 +102,7 @@ Need to check with instructor/our group
 
 ```
 {
-  "id": 1,
+  "post_id": 1,
   "username": "whatever",
   "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33",
