@@ -34,12 +34,12 @@
 
 * Example:
 
-* ```
+```
 {
 	"username": "whatever",
 	"token": "102931afffksdfjklss",
 }
-```*
+```
 
 ## Post
 
@@ -57,7 +57,7 @@
 
 * Example data response:
 
-* ```
+```
 {
 	"image_url": "http://whatever.com/image.jpg",
 	"username": "whatever"
@@ -77,7 +77,7 @@
 
 * Example data response:
 
-* ```
+```
 {
   "id": 1,
   "username": "whatever",
