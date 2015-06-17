@@ -1,6 +1,8 @@
 # API
 
-## New user registration
+## Sign up and Login
+
+### New user registration
 
 * Path: POST `'/users/register'`
 
@@ -15,7 +17,7 @@
 * Response success
   * Status Code: 201
 
-* Example:
+* Example data response:
 
 ```
 {
@@ -32,14 +34,16 @@
 
 * Example:
 
-```
+* ```
 {
 	"username": "whatever",
 	"token": "102931afffksdfjklss",
 }
 ```
 
-## Create post
+## Post
+
+### Create post
 
 * Path: POST `'/posts/new'`
 
@@ -51,9 +55,9 @@
 * Response success:
   * Status code: 201
 
-* Example:
+* Example data response:
 
-```
+* ```
 {
 	"image_url": "http://whatever.com/image.jpg",
 	"username": "whatever"
@@ -61,9 +65,9 @@
 }
 ```
 
-## Lists of posts from all users
+### Lists of posts from all users
 
-* Path: GET '/posts/'
+* Path: GET `'/posts/'`
 
 * PAGINATION???
   * Will probably add.
@@ -71,9 +75,9 @@
 * Response success:
   * Status code: 200
 
-* Example:
+* Example data response:
 
-```
+* ```
 {
   "id": 1,
   "username": "whatever",
