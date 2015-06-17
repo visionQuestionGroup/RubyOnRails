@@ -6,7 +6,7 @@
 
 * Path: POST `'/users/register'`
 
-* Params:
+* Parameters:
 	* username: a string
   * password: a string
   * first_name: a string
@@ -41,7 +41,15 @@
 }
 ```
 
-## Post
+### Login user
+
+Need to check with instructor/our group
+
+### Logout user
+
+Need to check with instructor/our group
+
+## Posts
 
 ### Create post
 
@@ -65,6 +73,14 @@
 }
 ```
 
+### Edit post
+
+* Path: PUT `'/posts/:id'`
+
+### Delete post
+
+### List all of posts from specific user
+
 ### Lists of posts from all users
 
 * Path: GET `'/posts/'`
@@ -85,3 +101,16 @@
   "guessed": true
 }
 ```
+
+## Guesses
+
+### User can guess
+
+Post request
+
+Returns yes if user has guessed right, and returns answer?
+Returns all guesses a user has made on a post?
+
+## Scoreboard
+
+### Get top 10 users for all time
