@@ -57,13 +57,11 @@ Path:
   * username: a string
   * password: a string
 
+Example data successful response:
 
-* Response success
-  * Status Code: 200
+```json
+Response Status Code: 200 (TBD)
 
-* Example data response:
-
-```
 {
   "username": "whatever",
   "access_token": "102931afffksdfjklss"
@@ -94,12 +92,11 @@ Parameters
   * username: a string
   * answer: a string
 
-* Response success:
-  * Status code: 201
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 201
 
-```
 {
 	"image_url": "http://whatever.com/image.jpg",
 	"username": "whatever"
@@ -123,10 +120,10 @@ Path:
 
 `GET '/:username/posts/:id'`
 
-* Response success:
-  * Status code: 200
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 200
 
 {
   "post_id": 33,
@@ -134,6 +131,7 @@ Path:
   "image_url": "http://whatever.com/image.jpg"
   "post_url": "/posts/33"
 }
+```
 
 Example data failure response:
 
@@ -151,12 +149,11 @@ Path:
 
 `GET '/:username/posts/'`
 
-* Response success:
-  * Status code: 200
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 200
 
-```
 [
 {
   "post_id": 33,
@@ -192,12 +189,11 @@ Path:
 * PAGINATION???
   * Will probably add.
 
-* Response success:
-  * Status code: 200
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 200
 
-```
 [
 {
   "post_id": 1,
@@ -239,12 +235,11 @@ Path:
 * Params:
   * guess: a string
 
-* Response success:
-  * Status code: 201
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 201
 
-```
 {
   "username": "whatever",
   "link_id": 22,
@@ -271,13 +266,11 @@ Path:
 
 `GET '/topscores/'`
 
-* Response success:
-  * Status code: 200
+Example data successful response:
 
+```json
+Response Status Code: 200
 
-* Example data response:
-
-```
 [
 {
   "username": "whatever",
