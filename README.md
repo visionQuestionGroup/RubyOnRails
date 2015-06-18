@@ -22,12 +22,12 @@ Parameters:
 | last_name  | string | last name of user to be created          |
 | email      | string | email of user to be created              |
 
-* Response success
-  * Status Code: 201
 
-* Example data response:
+Example data response:
 
 ```
+Response status code: 201
+
 {
 	"username": "whatever"
   "access_token": "102931afffksdfjklss"
