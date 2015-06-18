@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 20150617213252) do
     t.string   "email"
     t.string   "password"
     t.string   "access_token"
-    t.integer  "post_id"
-    t.integer  "guess_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
