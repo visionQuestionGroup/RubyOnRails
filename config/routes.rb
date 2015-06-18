@@ -76,5 +76,7 @@ Rails.application.routes.draw do
 
   get '/topscores', to: 'scoreboard#top_scores'
 
+  # HOME PAGE
 
+  root to: 'welcome#index'
 end
