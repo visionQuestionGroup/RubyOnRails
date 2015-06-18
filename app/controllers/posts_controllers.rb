@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class PostsController < ApplicationController
 
   def new
     @user = User.find_by(user_name: params[:user_name])
