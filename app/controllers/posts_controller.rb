@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_with_token!
 
   def new
     @post = current_user.post.new( image_url: params[:image_url],
@@ -6,7 +7,8 @@ class PostsController < ApplicationController
     if @post.save
       render 'new.json.jbuilder', status: :created
     else
-      puts "nope"
+      ender json: { errors: @post.errors.full_messages },
+        status: :unprocessable_entity
     end
   end
 
