@@ -11,6 +11,7 @@
 * Path: POST `'/users/register'`
 
 Parameters:
+
 | name       | type   | description                              |
 |------------|--------|------------------------------------------|
 | username   | string | username for user to be created          |
