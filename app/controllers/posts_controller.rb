@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_with_token!
 
   def new
-    @post = current_user.post.new( image_url: params[:image_url],
+    @post = current_user.posts.new( image_url: params[:image_url],
                                     answer: params[:answer] )
     if @post.save
       render 'new.json.jbuilder', status: :created
