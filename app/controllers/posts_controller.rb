@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if @post.save
       render 'new.json.jbuilder', status: :created
     else
-      ender json: { errors: @post.errors.full_messages },
+    render json: { errors: @post.errors.full_messages },
         status: :unprocessable_entity
     end
   end
