@@ -33,7 +33,7 @@ Response Status Code: 201
   "access_token": "102931afffksdfjklss",
   "first_name": "John",
   "last_name": "Doe",
-  "email": "johndoe@gmail.com",
+  "email": "johndoe@gmail.com"
 }
 ```
 
@@ -42,7 +42,7 @@ Example data failure response:
 ```json
 Response Status Code: TBD
 {
-  Error: TBD
+  "error": "TBD"
 }
 ```
 
