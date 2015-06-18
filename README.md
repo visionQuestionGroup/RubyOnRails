@@ -22,7 +22,7 @@ Parameters:
 
 | name       | type   | description                              |
 |------------|--------|------------------------------------------|
-| username   | string | username for user to be created          |
+| user_name   | string | username for user to be created          |
 | password   | string | password has to be at least 8 characters |
 | first_name | string | first name of user to be created         |
 | last_name  | string | last name of user to be created          |
@@ -35,7 +35,7 @@ Example data successful response:
 Response Status Code: 201
 
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "access_token": "102931afffksdfjklss",
   "first_name": "John",
   "last_name": "Doe",
@@ -63,7 +63,7 @@ Parameters:
 
 | name     | type   | description                                                 |
 |----------|--------|-------------------------------------------------------------|
-| username | string | username for the user you want get authentication key for   |
+| user_name | string | username for the user you want get authentication key for   |
 | password | string | password for the user you want get authentication token for |
 
 Example data successful response:
@@ -72,7 +72,7 @@ Example data successful response:
 Response Status Code: 200 (TBD)
 
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "access_token": "102931afffksdfjklss"
 }
 ```
@@ -99,7 +99,7 @@ Parameters
 
 | name      | type   | description                            |
 |-----------|--------|----------------------------------------|
-| username  | string | username of the user creating the post |
+| user_name  | string | username of the user creating the post |
 | image_url | string | url for the image of the post          |
 | answer    | string | answer for the post                    |
 
@@ -110,7 +110,7 @@ Response Status Code: 201
 
 {
 	"image_url": "http://whatever.com/image.jpg",
-	"username": "whatever",
+	"user_name": "whatever",
 	"answer": "This is the answer"
 }
 ```
@@ -138,7 +138,7 @@ Response Status Code: 200
 
 {
   "post_id": 33,
-  "username": "whatever",
+  "user_name": "whatever",
   "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33"
 }
@@ -168,13 +168,13 @@ Response Status Code: 200
 [
 {
   "post_id": 33,
-  "username": "whatever",
+  "user_name": "whatever",
   "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33"
 }
 {
   "post_id": 34,
-  "username": "whatever",
+  "user_name": "whatever",
   "image_url": "http://whatever.com/image2.jpg",
   "post_url": "/posts/34"
 }
@@ -211,7 +211,7 @@ Response Status Code: 200
 [
 {
   "post_id": 1,
-  "username": "whatever",
+  "user_name": "whatever",
   "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/1",
   "guessed": true,
@@ -219,7 +219,7 @@ Response Status Code: 200
 }
 {
   "post_id": 55,
-  "username": "bestusernamever",
+  "user_name": "bestusernamever",
   "image_url": "http://whatever.com/image11.jpg",
   "post_url": "/posts/55",
   "guessed": false,
@@ -258,7 +258,7 @@ Example data successful response:
 Response Status Code: 201
 
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "link_id": 22,
   "guesses_left": 3,
   "won": false
@@ -290,11 +290,11 @@ Response Status Code: 200
 
 [
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "score": 20
 }
 {
-  "username": "anotheruser",
+  "user_name": "anotheruser",
   "score": 40
 }
 ]
