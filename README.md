@@ -70,6 +70,16 @@ Path:
 }
 ```
 
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
+
 ## Posts
 
 ### Create post
@@ -97,6 +107,16 @@ Parameters
 }
 ```
 
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
+
 ### Show a specific post of a user
 
 Path:
@@ -114,6 +134,16 @@ Path:
   "image_url": "http://whatever.com/image.jpg"
   "post_url": "/posts/33"
 }
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
 
 ### List all of posts from specific user
 
@@ -141,6 +171,16 @@ Path:
   "post_url": "/posts/34"
 }
 ]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
 ```
 
 ### Lists of posts from all users
@@ -178,6 +218,16 @@ Path:
 ]
 ```
 
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
+
 ## Guesses
 
 ### User can guess
@@ -200,6 +250,16 @@ Path:
   "link_id": 22,
   "guesses_left": 3,
   "won": false
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
 }
 ```
 
@@ -228,4 +288,14 @@ Path:
   "score": 40,
 }
 ]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
 ```
