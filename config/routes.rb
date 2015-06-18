@@ -53,4 +53,28 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # API ROUTES
+
+  # USER SIGN UP AND LOGIN ROUTES
+
+  post '/users/register', to: 'users#register'
+  post '/users/login', to: 'users#login'
+
+  # POST IMAGE ROUTES
+
+  post '/posts/new', to: 'posts#new'
+  get '/:username/posts/:id', to: 'posts#show'
+  get '/:username/posts', to: 'posts#user_posts'
+  get '/posts', to: 'posts#all'
+
+  # GUESSES ROUTES
+
+  post '/:username/posts/:link_id', to: 'guesses#new'
+
+  # SCOREBOARD ROUTES
+
+  get '/topscores/', to: 'scoreboard#top_scores'
+
+
 end
