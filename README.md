@@ -23,7 +23,7 @@ Parameters:
 | email      | string | email of user to be created              |
 
 
-Example data response:
+Example data successful response:
 
 ```json
 Response Status Code: 201
@@ -37,15 +37,12 @@ Response Status Code: 201
 }
 ```
 
-* Response failure
-  * Status Code: TBD
+Example data failure response:
 
-* Example:
-
-```
+```json
+Response Status Code: TBD
 {
-
-
+  Error: TBD
 }
 ```
 
