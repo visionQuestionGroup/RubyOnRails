@@ -25,7 +25,7 @@ Parameters:
 
 Example data response:
 
-```
+```json
 Response status code: 201
 
 {
