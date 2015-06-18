@@ -1,83 +1,93 @@
 # API
 
+## Overview
+
+All access is over HTTPS, and access from the "WHATEVER URL" domain. All data is sent and received as JSON.
+
 ## Access Token
-* Every request requires an authentication token to be provided in the header.
+
+Every request requires an authentication token to be provided in the header.
+
+To do this make sure you set 'Access-Token' equal to the user's access token in every request except for SIGNUP and LOGIN.
+
+```
+['Access-Token'] = '1aB234cDhJks82jaC'
+```
 
 ## Sign up and Login
 
 ### New user registration
 
-* Path: POST `'/users/register'`
+Path:
 
-* Parameters:
-	* username: a string
-  * password: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+`POST '/users/register'`
 
-* Response success
-  * Status Code: 201
+Parameters:
 
-* Example data response:
+| name       | type   | description                              |
+|------------|--------|------------------------------------------|
+| user_name   | string | username for user to be created          |
+| password   | string | password has to be at least 8 characters |
+| first_name | string | first name of user to be created         |
+| last_name  | string | last name of user to be created          |
+| email      | string | email of user to be created              |
 
-```
+
+Example data successful response:
+
+```json
+Response Status Code: 201
+
 {
-	"username": "whatever",
-  "access_token": "102931afffksdfjklss"
+  "user_name": "whatever",
+  "access_token": "102931afffksdfjklss",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "johndoe@gmail.com"
 }
 ```
 
-* Response failure
-  * Status Code: TBD
+Example data failure response:
 
-* Example:
+```json
+Response Status Code: TBD
 
-```
 {
-
-
+  "error": "TBD"
 }
 ```
 
 ### User login
 
-* Path: POST `'/users/login'`
+Path:
 
-* Parameters:
-  * username: a string
-  * password: a string
+`POST '/users/login'`
 
+Parameters:
 
-* Response success
-  * Status Code: 201
+| name     | type   | description                                                 |
+|----------|--------|-------------------------------------------------------------|
+| user_name | string | username for the user you want get authentication key for   |
+| password | string | password for the user you want get authentication token for |
 
-* Example data response:
+Example data successful response:
 
-```
+```json
+Response Status Code: 200 (TBD)
+
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "access_token": "102931afffksdfjklss"
 }
 ```
 
-### User logout
+Example data failure response:
 
-* Path: POST `'/users/logout'`
+```json
+Response Status Code: TBD
 
-* Parameters:
-  * auth_token: a string
-
-
-* Response success
-  * Status Code: 201
-
-* Example data response:
-
-```
 {
-
+  "error": "TBD"
 }
 ```
 
@@ -85,65 +95,150 @@
 
 ### Create post
 
-* Path: POST `'/posts/new'`
+Path: 
 
-* Params:
-  * image_url: a string url
-  * username: a string
-  * answer: a string
+`POST '/posts/new'`
 
-* Response success:
-  * Status code: 201
+Parameters
 
-* Example data response:
+| name      | type   | description                            |
+|-----------|--------|----------------------------------------|
+| user_name  | string | username of the user creating the post |
+| image_url | string | url for the image of the post          |
+| answer    | string | answer for the post                    |
 
-```
+Example data successful response:
+
+```json
+Response Status Code: 201
+
 {
 	"image_url": "http://whatever.com/image.jpg",
-	"username": "whatever"
+	"user_name": "whatever",
 	"answer": "This is the answer"
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
+
+### Show a specific post of a user
+
+Path:
+
+`GET '/:username/posts/:id'`
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+{
+  "post_id": 33,
+  "user_name": "whatever",
+  "image_url": "http://whatever.com/image.jpg",
+  "post_url": "/posts/33"
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
 }
 ```
 
 ### List all of posts from specific user
 
-* Path: GET `'/:username/posts/'`
+Path: 
 
-* Response success:
-  * Status code: 200
+`GET '/:username/posts'`
 
-* Example data response:
+Example data successful response:
 
-```
+```json
+Response Status Code: 200
+
 [
 {
-  "post_id": 2,
-  "username": "whatever",
-  "image_url": "http://whatever.com/image.jpg"
+  "post_id": 33,
+  "user_name": "whatever",
+  "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33"
+}
+{
+  "post_id": 34,
+  "user_name": "whatever",
+  "image_url": "http://whatever.com/image2.jpg",
+  "post_url": "/posts/34"
 }
 ]
 ```
 
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
+```
+
 ### Lists of posts from all users
 
-* Path: GET `'/posts/'`
+Path:
 
-* PAGINATION???
-  * Will probably add.
+`GET '/posts'`
 
-* Response success:
-  * Status code: 200
+Parameters:
 
-* Example data response:
+| name | type    | description             |
+|------|---------|-------------------------|
+| page | integer | NOT CURRENTLY SUPPORTED |
 
-```
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
 {
   "post_id": 1,
-  "username": "whatever",
+  "user_name": "whatever",
   "image_url": "http://whatever.com/image.jpg",
-  "post_url": "/posts/33",
-  "guessed": true
+  "post_url": "/posts/1",
+  "guessed": true,
+  "guessed_by": "heynowbrowncow"
+}
+{
+  "post_id": 55,
+  "user_name": "bestusernamever",
+  "image_url": "http://whatever.com/image11.jpg",
+  "post_url": "/posts/55",
+  "guessed": false,
+  "guessed_by": null
+}
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
 }
 ```
 
@@ -151,19 +246,36 @@
 
 ### User can guess
 
-* Path: POST `'/:username/posts/:link_id/'`
+Path: 
 
-* Response success:
-  * Status code: 200
+`POST '/:username/posts/:link_id'`
 
-* Example data response:
+Parameters:
 
-```
+| name  | type   | description                            |
+|-------|--------|----------------------------------------|
+| guess | string | username of the user creating the post |
+
+Example data successful response:
+
+```json
+Response Status Code: 201
+
 {
-  "username": "whatever",
+  "user_name": "whatever",
   "link_id": 22,
   "guesses_left": 3,
   "won": false
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
 }
 ```
 
@@ -171,23 +283,33 @@
 
 ### Get top 10 users for all time
 
-* Path: GET `'/topscores/'`
+Path: 
 
-* Response success:
-  * Status code: 200
+`GET '/topscores'`
 
+Example data successful response:
 
-* Example data response:
+```json
+Response Status Code: 200
 
-```
 [
 {
-  "username": "whatever",
-  "score": 20,
+  "user_name": "whatever",
+  "score": 20
 }
 {
-  "username": "anotheruser",
-  "score": 40,
+  "user_name": "anotheruser",
+  "score": 40
 }
 ]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "error": "TBD"
+}
 ```
