@@ -41,6 +41,7 @@ Example data failure response:
 
 ```json
 Response Status Code: TBD
+
 {
   "error": "TBD"
 }
@@ -48,7 +49,9 @@ Response Status Code: TBD
 
 ### User login
 
-* Path: POST `'/users/login'`
+Path:
+
+`POST '/users/login'`
 
 * Parameters:
   * username: a string
@@ -71,9 +74,12 @@ Response Status Code: TBD
 
 ### Create post
 
-* Path: POST `'/posts/new'`
+Path: 
 
-* Params:
+`POST '/posts/new'`
+
+Parameters
+
   * image_url: a string url
   * username: a string
   * answer: a string
@@ -93,7 +99,9 @@ Response Status Code: TBD
 
 ### Show a specific post of a user
 
-* Path: GET `'/:username/posts/:id'`
+Path:
+
+`GET '/:username/posts/:id'`
 
 * Response success:
   * Status code: 200
@@ -109,7 +117,9 @@ Response Status Code: TBD
 
 ### List all of posts from specific user
 
-* Path: GET `'/:username/posts/'`
+Path: 
+
+`GET '/:username/posts/'`
 
 * Response success:
   * Status code: 200
@@ -135,7 +145,9 @@ Response Status Code: TBD
 
 ### Lists of posts from all users
 
-* Path: GET `'/posts/'`
+Path:
+
+`GET '/posts/'`
 
 * PAGINATION???
   * Will probably add.
@@ -170,7 +182,9 @@ Response Status Code: TBD
 
 ### User can guess
 
-* Path: POST `'/:username/posts/:link_id/'`
+Path: 
+
+`POST '/:username/posts/:link_id/'`
 
 * Params:
   * guess: a string
@@ -193,7 +207,9 @@ Response Status Code: TBD
 
 ### Get top 10 users for all time
 
-* Path: GET `'/topscores/'`
+Path: 
+
+`GET '/topscores/'`
 
 * Response success:
   * Status code: 200
