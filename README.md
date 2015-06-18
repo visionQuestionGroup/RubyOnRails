@@ -26,14 +26,14 @@ Parameters:
 Example data response:
 
 ```json
-Response status code: 201
+Response Status Code: 201
 
 {
-	"username": "whatever"
-  "access_token": "102931afffksdfjklss"
-  "first_name": "John"
-  "last_name": "Doe"
-  "email": "johndoe@gmail.com"
+  "username": "whatever",
+  "access_token": "102931afffksdfjklss",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "johndoe@gmail.com",
 }
 ```
 
