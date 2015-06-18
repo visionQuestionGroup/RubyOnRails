@@ -162,7 +162,7 @@ Response Status Code: TBD
 
 Path: 
 
-`GET '/:username/posts/'`
+`GET '/:username/posts'`
 
 Example data successful response:
 
@@ -199,7 +199,7 @@ Response Status Code: TBD
 
 Path:
 
-`GET '/posts/'`
+`GET '/posts'`
 
 Parameters:
 
@@ -248,7 +248,7 @@ Response Status Code: TBD
 
 Path: 
 
-`POST '/:username/posts/:link_id/'`
+`POST '/:username/posts/:link_id'`
 
 Parameters:
 
@@ -285,7 +285,7 @@ Response Status Code: TBD
 
 Path: 
 
-`GET '/topscores/'`
+`GET '/topscores'`
 
 Example data successful response:
 
