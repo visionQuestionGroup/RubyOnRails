@@ -99,7 +99,7 @@ Response Status Code: 201
 
 {
 	"image_url": "http://whatever.com/image.jpg",
-	"username": "whatever"
+	"username": "whatever",
 	"answer": "This is the answer"
 }
 ```
@@ -128,7 +128,7 @@ Response Status Code: 200
 {
   "post_id": 33,
   "username": "whatever",
-  "image_url": "http://whatever.com/image.jpg"
+  "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33"
 }
 ```
@@ -158,13 +158,13 @@ Response Status Code: 200
 {
   "post_id": 33,
   "username": "whatever",
-  "image_url": "http://whatever.com/image.jpg"
+  "image_url": "http://whatever.com/image.jpg",
   "post_url": "/posts/33"
 }
 {
   "post_id": 34,
   "username": "whatever",
-  "image_url": "http://whatever.com/image2.jpg"
+  "image_url": "http://whatever.com/image2.jpg",
   "post_url": "/posts/34"
 }
 ]
@@ -274,11 +274,11 @@ Response Status Code: 200
 [
 {
   "username": "whatever",
-  "score": 20,
+  "score": 20
 }
 {
   "username": "anotheruser",
-  "score": 40,
+  "score": 40
 }
 ]
 ```
