@@ -11,14 +11,13 @@
 * Path: POST `'/users/register'`
 
 Parameters:
-| name | type | description |
-|:----:|:----:|-------------|
-| username | string | username for the user you want to create |
-| password | string | password for the user you want to create |
-| first_name | string | first_name for the user you want to create |
-| last_name | string | last_name for the user you want to create |
-| email | string | email for the user you want to create |
-| password | string | password must be at least 8 characters |
+| name       | type   | description                              |
+|------------|--------|------------------------------------------|
+| username   | string | username for user to be created          |
+| password   | string | password has to be at least 8 characters |
+| first_name | string | first name of user to be created         |
+| last_name  | string | last name of user to be created          |
+| email      | string | email of user to be created              |
 
 * Response success
   * Status Code: 201
