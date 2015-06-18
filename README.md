@@ -8,7 +8,6 @@ To do this make sure you set 'Access-Token' equal to the user's access token in 
 
 ```
 ['Access-Token'] = '1aB234cDhJks82jaC'
-
 ```
 
 ## Sign up and Login
