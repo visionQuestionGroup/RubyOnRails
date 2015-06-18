@@ -7,9 +7,9 @@ class UsersController < ApplicationController
                       email: params[:email],
                      password: passhash)
     if @user.save
-      render users.register.json.jbuilder, status: :created
+      render 'register.json.jbuilder', status: :created
       else 
-        render @user.errors.full_messages.json.jbuilder,
+        render json: { errors: @user.errors.full_messages },
         status: :unprocessable_entity
     end
   end
