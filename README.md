@@ -97,13 +97,12 @@ Response Status Code: TBD
 
 Path: 
 
-`POST '/posts/new'`
+`POST '/posts'`
 
 Parameters
 
 | name      | type   | description                            |
 |-----------|--------|----------------------------------------|
-| user_name  | string | username of the user creating the post |
 | image_url | string | url for the image of the post          |
 | answer    | string | answer for the post                    |
 
@@ -129,11 +128,11 @@ Response Status Code: TBD
 }
 ```
 
-### Show a specific post of a user
+### Show a specific post of the current user
 
 Path:
 
-`GET '/:username/posts/:id'`
+`GET '/posts/:id'`
 
 Example data successful response:
 
@@ -158,11 +157,11 @@ Response Status Code: TBD
 }
 ```
 
-### List all of posts from specific user
+### List all of posts from current user
 
 Path: 
 
-`GET '/:username/posts'`
+`GET '/posts'`
 
 Example data successful response:
 
@@ -199,7 +198,7 @@ Response Status Code: TBD
 
 Path:
 
-`GET '/posts'`
+`GET '/posts/all'`
 
 Parameters:
 
@@ -248,13 +247,13 @@ Response Status Code: TBD
 
 Path: 
 
-`POST '/:username/posts/:link_id'`
+`POST '/posts/:post_id'`
 
 Parameters:
 
 | name  | type   | description                            |
 |-------|--------|----------------------------------------|
-| guess | string | username of the user creating the post |
+| guess | string | guess on the post                      |
 
 Example data successful response:
 
