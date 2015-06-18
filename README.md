@@ -1,8 +1,15 @@
 # API
 
 ## Access Token
-* Every request requires an authentication token to be provided in the header.
-* Access_Token
+
+Every request requires an authentication token to be provided in the header.
+
+To do make sure you set 'Access-Token' equal to the user's access token in EVERY request.
+
+```
+['Access-Token'] = '1aB234cDhJks82jaC'
+
+```
 
 ## Sign up and Login
 
