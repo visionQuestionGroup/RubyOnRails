@@ -157,7 +157,7 @@ Response Status Code: TBD
 }
 ```
 
-### List all of posts from specific user
+### List all of posts from current user
 
 Path: 
 
