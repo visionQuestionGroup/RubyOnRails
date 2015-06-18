@@ -253,6 +253,7 @@ Parameters:
 
 | name  | type   | description                            |
 |-------|--------|----------------------------------------|
+| post_id | integer | id of the post the user is making a guess on |
 | guess | string | guess on the post                      |
 
 Example data successful response:
