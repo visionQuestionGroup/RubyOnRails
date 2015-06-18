@@ -42,10 +42,13 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-# gem rails_12factor for Heroku
-  gem 'rails_12factor', group: :production
+  gem 'pry'
 
 # Specifying ruby 2.2.0 for Heroku
   ruby "2.1.5"
 end
 
+group :production do
+  gem 'rack-cors', require: 'rack/cors'
+  gem 'rails_12factor'
+end
