@@ -1,5 +1,9 @@
 # API
 
+## Overview
+
+All access is over HTTPS, and access from the "WHATEVER URL" domain. All data is sent and received as JSON.
+
 ## Access Token
 
 Every request requires an authentication token to be provided in the header.
