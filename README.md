@@ -247,7 +247,7 @@ Response Status Code: TBD
 
 Path: 
 
-`POST '/posts/:post_id'`
+`POST '/guesses'`
 
 Parameters:
 
