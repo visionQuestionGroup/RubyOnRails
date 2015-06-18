@@ -74,7 +74,7 @@ Rails.application.routes.draw do
 
   # SCOREBOARD ROUTES
 
-  get '/topscores/', to: 'scoreboard#top_scores'
+  get '/topscores', to: 'scoreboard#top_scores'
 
 
 end
