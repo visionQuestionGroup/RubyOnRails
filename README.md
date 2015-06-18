@@ -8,7 +8,9 @@
 
 ### New user registration
 
-* Path: POST `'/users/register'`
+Path:
+
+`POST '/users/register'`
 
 Parameters:
 
