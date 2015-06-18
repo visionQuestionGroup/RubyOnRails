@@ -7,12 +7,10 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :email
       t.string :password
       t.string :access_token
-      t.string :post
-      t.string :guess
+      t.integer :post_id
+      t.integer :guess_id
 
 
-      t.datetime :created_at
-      t.datetime :updated_at
       t.timestamps null: false
     end
   end
