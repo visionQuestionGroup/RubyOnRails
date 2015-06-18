@@ -63,14 +63,14 @@ Rails.application.routes.draw do
 
   # POST IMAGE ROUTES
 
-  post '/posts/new', to: 'posts#new'
-  get '/:username/posts/:id', to: 'posts#show'
-  get '/:username/posts', to: 'posts#user_posts'
-  get '/posts', to: 'posts#all'
+  post '/posts', to: 'posts#new'
+  get '/post/:id', to: 'posts#show'
+  get '/posts', to: 'posts#user_posts'
+  get '/posts/all', to: 'posts#all'
 
   # GUESSES ROUTES
 
-  post '/:username/posts/:link_id', to: 'guesses#new'
+  post '/posts/:post_id', to: 'guesses#new'
 
   # SCOREBOARD ROUTES
 
