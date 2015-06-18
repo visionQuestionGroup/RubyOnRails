@@ -44,6 +44,7 @@ group :development, :test do
 
 # gem rails_12factor for Heroku
   gem 'rails_12factor', group: :production
+  gem 'pry'
 
 # Specifying ruby 2.2.0 for Heroku
   ruby "2.1.5"
