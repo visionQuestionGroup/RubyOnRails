@@ -209,7 +209,7 @@ Response Status Code: 200
   "image_url": "http://whatever.com/image11.jpg",
   "post_url": "/posts/55",
   "guessed": false,
-  "guessed_by": nil
+  "guessed_by": null
 }
 ]
 ```
