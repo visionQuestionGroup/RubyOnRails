@@ -70,7 +70,7 @@ Rails.application.routes.draw do
 
   # GUESSES ROUTES
 
-  post '/posts/:post_id', to: 'guesses#new'
+  post '/guesses', to: 'guesses#new'
 
   # SCOREBOARD ROUTES
 
