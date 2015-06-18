@@ -2,6 +2,7 @@
 
 ## Access Token
 * Every request requires an authentication token to be provided in the header.
+* Access_Token
 
 ## Sign up and Login
 
@@ -9,13 +10,15 @@
 
 * Path: POST `'/users/register'`
 
-* Parameters:
-	* username: a string
-  * password: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+Parameters:
+| name | type | description |
+|:----:|:----:|-------------|
+| username | string | username for the user you want to create |
+| password | string | password for the user you want to create |
+| first_name | string | first_name for the user you want to create |
+| last_name | string | last_name for the user you want to create |
+| email | string | email for the user you want to create |
+| password | string | password must be at least 8 characters |
 
 * Response success
   * Status Code: 201
@@ -24,8 +27,11 @@
 
 ```
 {
-	"username": "whatever",
+	"username": "whatever"
   "access_token": "102931afffksdfjklss"
+  "first_name": "John"
+  "last_name": "Doe"
+  "email": "johndoe@gmail.com"
 }
 ```
 
@@ -51,7 +57,7 @@
 
 
 * Response success
-  * Status Code: 201
+  * Status Code: 200
 
 * Example data response:
 
@@ -59,25 +65,6 @@
 {
   "username": "whatever",
   "access_token": "102931afffksdfjklss"
-}
-```
-
-### User logout
-
-* Path: POST `'/users/logout'`
-
-* Parameters:
-  * auth_token: a string
-
-
-* Response success
-  * Status Code: 201
-
-* Example data response:
-
-```
-{
-
 }
 ```
 
@@ -105,6 +92,22 @@
 }
 ```
 
+### Show a specific post of a user
+
+* Path: GET `'/:username/posts/:id'`
+
+* Response success:
+  * Status code: 200
+
+* Example data response:
+
+{
+  "post_id": 33,
+  "username": "whatever",
+  "image_url": "http://whatever.com/image.jpg"
+  "post_url": "/posts/33"
+}
+
 ### List all of posts from specific user
 
 * Path: GET `'/:username/posts/'`
@@ -117,10 +120,16 @@
 ```
 [
 {
-  "post_id": 2,
+  "post_id": 33,
   "username": "whatever",
   "image_url": "http://whatever.com/image.jpg"
   "post_url": "/posts/33"
+}
+{
+  "post_id": 34,
+  "username": "whatever",
+  "image_url": "http://whatever.com/image2.jpg"
+  "post_url": "/posts/34"
 }
 ]
 ```
@@ -138,13 +147,24 @@
 * Example data response:
 
 ```
+[
 {
   "post_id": 1,
   "username": "whatever",
   "image_url": "http://whatever.com/image.jpg",
-  "post_url": "/posts/33",
-  "guessed": true
+  "post_url": "/posts/1",
+  "guessed": true,
+  "guessed_by": "heynowbrowncow"
 }
+{
+  "post_id": 55,
+  "username": "bestusernamever",
+  "image_url": "http://whatever.com/image11.jpg",
+  "post_url": "/posts/55",
+  "guessed": false,
+  "guessed_by": nil
+}
+]
 ```
 
 ## Guesses
@@ -153,8 +173,11 @@
 
 * Path: POST `'/:username/posts/:link_id/'`
 
+* Params:
+  * guess: a string
+
 * Response success:
-  * Status code: 200
+  * Status code: 201
 
 * Example data response:
 
