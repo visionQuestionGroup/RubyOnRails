@@ -53,9 +53,12 @@ Path:
 
 `POST '/users/login'`
 
-* Parameters:
-  * username: a string
-  * password: a string
+Parameters:
+
+| name     | type   | description                                                 |
+|----------|--------|-------------------------------------------------------------|
+| username | string | username for the user you want get authentication key for   |
+| password | string | password for the user you want get authentication token for |
 
 Example data successful response:
 
@@ -88,9 +91,11 @@ Path:
 
 Parameters
 
-  * image_url: a string url
-  * username: a string
-  * answer: a string
+| name      | type   | description                            |
+|-----------|--------|----------------------------------------|
+| username  | string | username of the user creating the post |
+| image_url | string | url for the image of the post          |
+| answer    | string | answer for the post                    |
 
 Example data successful response:
 
@@ -186,8 +191,11 @@ Path:
 
 `GET '/posts/'`
 
-* PAGINATION???
-  * Will probably add.
+Parameters:
+
+| name | type    | description             |
+|------|---------|-------------------------|
+| page | integer | NOT CURRENTLY SUPPORTED |
 
 Example data successful response:
 
@@ -232,8 +240,11 @@ Path:
 
 `POST '/:username/posts/:link_id/'`
 
-* Params:
-  * guess: a string
+Parameters:
+
+| name  | type   | description                            |
+|-------|--------|----------------------------------------|
+| guess | string | username of the user creating the post |
 
 Example data successful response:
 
