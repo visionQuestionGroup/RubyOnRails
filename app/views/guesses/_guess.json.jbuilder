@@ -53,3 +53,4 @@ create_table "posts", force: :cascade do |t|
   "guesses_left": 3,
   "won": false
 }
+
