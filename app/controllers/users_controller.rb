@@ -8,10 +8,11 @@ class UsersController < ApplicationController
                      password: passhash)
     if @user.save
       render 'register.json.jbuilder', status: :created
-      else 
-        render json: { errors: @user.errors.full_messages },
-        status: :unprocessable_entity
+    else 
+      render json: { errors: @user.errors.full_messages },
+      status: :unprocessable_entity
     end
+  end
 
   def login
     passhash = Digest::SHA1.hexdigest(params[:password])
