@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new( image_url: params[:image_url],
                                     answer: params[:answer] )
     if @post.save
-      render 'new.json.jbuilder', status: :created
+      render 'new.json.jbuilder', status: :ok
     else
     render json: { errors: @post.errors.full_messages },
         status: :unprocessable_entity
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def show
     @post = current_user.posts.find_by(id: params[:id])
     if @post
-      render 'show.json.jbuilder', status: :created
+      render 'show.json.jbuilder', status: :ok
     else
       render json: { message: "This user does not have a post with that ID." },
         status: :not_found
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def user_posts
     @posts = current_user.posts.all
     if @posts.any?
-      render 'user_posts.json.jbuilder', status: :created
+      render 'user_posts.json.jbuilder', status: :ok
     else
       render json: { message: "This user does not have any posts." },
         status: :not_found
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def all
     @posts = Post.all
     if @posts.any?
-      render 'all.json.jbuilder', status: :created
+      render 'all.json.jbuilder', status: :ok
     else
       render json: { message: "There are no posts." },
         status: :not_found
