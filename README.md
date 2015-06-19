@@ -145,7 +145,7 @@ Response Status Code: TBD
 
 Path:
 
-`GET '/posts/:id'`
+`GET '/post/:id'`
 
 Example data successful response:
 
@@ -183,7 +183,7 @@ Response Status Code: TBD
 
 Path: 
 
-`GET '/posts/users'`
+`GET '/posts/user'`
 
 Example data successful response:
 
