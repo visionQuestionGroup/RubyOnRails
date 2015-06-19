@@ -15,6 +15,7 @@ class GuessesController < ApplicationController
   end
 end
 
+
 def show
     @guess = current_user.post.guesses.find_by(id: params[:id])
     if @guess
