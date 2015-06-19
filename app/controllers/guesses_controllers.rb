@@ -47,15 +47,4 @@ def show
         status: :not_found
     end
   end
-
-
-
 end
-
-
-
-
-
-
-
-
