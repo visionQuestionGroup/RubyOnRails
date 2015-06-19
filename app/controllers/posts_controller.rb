@@ -12,20 +12,34 @@ class PostsController < ApplicationController
     end
   end
 
-  # def show
-  #   @user = User.find_by(user_name: params[:user_name])
-  #   @post = @user.posts.find(params[:id])
-  #     render 'show.json.jbuilder', status: :created
-  # end
+  def show
+    @post = current_user.posts.find_by(id: params[:id])
+    if @post
+      render 'show.json.jbuilder', status: :created
+    else
+      render json: { message: "This user does not have a post with that ID." },
+        status: :not_found
+    end
+  end
 
-  # def user_posts
-  #   @posts = current_user.posts.all
-  #   render 'user_posts.json.jbuilder', status: :created
-  # end
+  def user_posts
+    @posts = current_user.posts.all
+    if @posts.any?
+      render 'user_posts.json.jbuilder', status: :created
+    else
+      render json: { message: "This user does not have any posts." },
+        status: :not_found
+    end
+  end
 
-  # def all
-  #   @posts = Post.all
-  #   render 'all.json.jbuilder', status: :created
-  # end
+  def all
+    @posts = Post.all
+    if @posts.any?
+      render 'all.json.jbuilder', status: :created
+    else
+      render json: { message: "There are no posts." },
+        status: :not_found
+    end
+  end
 
 end
