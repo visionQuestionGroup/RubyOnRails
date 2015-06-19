@@ -252,22 +252,36 @@ Example data successful response:
 Response Status Code: 200
 
 [
-{
-  "post_id": 1,
-  "user_name": "whatever",
-  "image_url": "http://whatever.com/image.jpg",
-  "post_url": "/posts/1",
-  "guessed": true,
-  "guessed_by": "heynowbrowncow"
-}
-{
-  "post_id": 55,
-  "user_name": "bestusernamever",
-  "image_url": "http://whatever.com/image11.jpg",
-  "post_url": "/posts/55",
-  "guessed": false,
-  "guessed_by": null
-}
+  {
+    "id": 33,
+    "post_info": {
+      "image_url": "http://waat.com/image.jprg",
+      "answer": "hello",
+      "created_at": "2015-06-19T12:47:38.064Z",
+      "updated_at": "2015-06-19T12:47:38.064Z"
+    },
+    "creator": {
+      "user_name": "Hey",
+      "first_name": "John",
+      "last_name": "What",
+      "email": "john@gmail.com"
+    }
+  },
+  {
+    "id": 22,
+    "post_info": {
+      "image_url": "http://google.com/image.jpg",
+      "answer": "answer",
+      "created_at": "2015-06-19T14:03:28.790Z",
+      "updated_at": "2015-06-19T14:03:28.790Z"
+    },
+    "creator": {
+      "user_name": "Mate",
+      "first_name": "Jason",
+      "last_name": "Derulo",
+      "email": "wut@wut.com"
+    }
+  }
 ]
 ```
 
