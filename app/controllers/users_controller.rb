@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   end
 
   def login
-
+    passhash = Digest::SHA1.hexdigest(params[:password])
     @user = User.find_by(user_name: params[:user_name],
-                     password: params[:password])
+                     password: passhash)
     if @user
       render 'login.json.jbuilder', status: :created
     else 
