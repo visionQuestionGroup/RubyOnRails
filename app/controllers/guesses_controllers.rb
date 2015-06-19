@@ -35,6 +35,8 @@ def show
     end
   end
 
+
+
   def all
     @guesses = Post.all
     if @guesses.any?
