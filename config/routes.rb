@@ -63,9 +63,9 @@ Rails.application.routes.draw do
 
   # POST IMAGE ROUTES
 
-  post '/posts', to: 'posts#new'
+  post '/posts/new', to: 'posts#new'
   get '/post/:id', to: 'posts#show'
-  get '/posts', to: 'posts#user_posts'
+  get '/posts/user', to: 'posts#user_posts'
   get '/posts/all', to: 'posts#all'
 
   # GUESSES ROUTES
