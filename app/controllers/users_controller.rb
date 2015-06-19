@@ -15,13 +15,13 @@ class UsersController < ApplicationController
   end
 
   def login
-    passhash = Digest::SHA1.hexdigest(params[:password])
-    @user = User.find(user_name: params[:user_name],
-                     password: passhash)
-    if @user.find
+
+    @user = User.find_by(user_name: params[:user_name],
+                     password: params[:password])
+    if @user
       render 'login.json.jbuilder', status: :created
-      else 
-        render json: { errors: @user.errors.full_messages },
+    else 
+      render json: { message: 'Waszzzzupp' },
         status: :unprocessable_entity
     end
   end
