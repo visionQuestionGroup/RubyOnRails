@@ -461,3 +461,24 @@ Response Status Code: TBD
   "message": "Sorry no scores to display."
 }
 ```
+
+### Get total score for a user
+
+Access-Token:
+
+Required.
+
+Path: 
+
+`GET '/user/score'`
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+{
+  "user_name": "whatever",
+  "score": 20
+}
+```

@@ -76,6 +76,7 @@ Rails.application.routes.draw do
   # SCOREBOARD ROUTES
 
   get '/topscores', to: 'scoreboard#top_scores'
+  get '/user/score', to: 'scoreboard#total_user_score'
 
   # HOME PAGE
 
