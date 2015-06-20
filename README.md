@@ -314,7 +314,7 @@ Response Status Code: TBD
 
 Access-Token:
 
-Required. This is to prevent you getting results of the current user in your list of posts.
+Not required.
 
 Path:
 
