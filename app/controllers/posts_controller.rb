@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def user_posts
-    @posts = current_user.posts.all
+    @posts = current_user.posts.order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'user_posts.json.jbuilder', status: :ok
     else
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def all
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'all.json.jbuilder', status: :ok
     else
