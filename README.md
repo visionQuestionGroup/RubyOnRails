@@ -185,6 +185,12 @@ Path:
 
 `GET '/posts/user'`
 
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
 Example data successful response:
 
 ```json
@@ -242,9 +248,9 @@ Path:
 
 Parameters:
 
-| name | type    | description             |
-|------|---------|-------------------------|
-| page | integer | NOT CURRENTLY SUPPORTED |
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
 
 Example data successful response:
 
