@@ -3,46 +3,14 @@ class GuessesController < ApplicationController
 
   def new
     @guess = Guess.new( user_id: current_user.id,
-                        post_id: params[:post_id],
-                        guess: params[:guess]
-                      )
+                            post_id: params[:post_id],
+                            guess: params[:guess])
     if @guess.save
+      @winner = @guess.check_solution
+      @guesses = current_user.posts.find_by(id: params[:post_id]).guesses.count
+
       render 'new.json.jbuilder', status: :created
     else
       render json: { errors: @guess.errors.full_messages },
-        status: :unprocessable_entity
     end
   end
-
-
-  # def show
-  #   @guess = current_user.post.guesses.find_by(id: params[:id])
-  #   if @guess
-  #     render 'show.json.jbuilder', status: :created
-  #   else
-  #     render json: { message: "This user does not have a post with that ID." },
-  #       status: :not_found
-  #   end
-  # end
-
-  # def user_guesses
-  #   @guesses = current_user.post.guesses.all
-  #   if @guesses.any?
-  #     render 'user_guesses.json.jbuilder', status: :created
-  #   else
-  #     render json: { message: "This user does not have any posts." },
-  #       status: :not_found
-  #   end
-  # end
-
-  # def all
-  #   @guesses = Post.all
-  #   if @guesses.any?
-  #     render 'all.json.jbuilder', status: :created
-  #   else
-  #     render json: { message: "There are no posts." },
-  #       status: :not_found
-  #   end
-  # end
-
-end
