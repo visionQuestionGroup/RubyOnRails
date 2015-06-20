@@ -1,4 +1,5 @@
 class ScoreboardController < ApplicationController
+  before_action: authenticate_with_token!, only: [:total_user_score]
 
   def top_scores
     @top_users = User.joins(:guesses).group(:user_name).order("sum_points DESC")
@@ -9,6 +10,11 @@ class ScoreboardController < ApplicationController
       render json: { message: "Sorry no scores to display." },
         status: :unprocessable_entity
     end
+  end
+
+  def total_score_user
+    @score = current_user.guesses.sum(:points)
+    render 'total_user_score.json.jbilder', status: :ok
   end
 
 end
