@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def all
-    @posts = Post.where.not(user_id: current_user.id).order(created_at: :desc).page(params[:page])
+    @posts = Post.order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'all.json.jbuilder', status: :ok
     else
