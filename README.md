@@ -91,6 +91,52 @@ Response Status Code: TBD
 }
 ```
 
+### Get all users
+
+Path:
+
+`Get '/users'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
+  {
+    "user_name": "rickard",
+    "first_name": "rsdffdasdf",
+    "last_name": "rsfsdfdfdf",
+    "email": "rickard@supsssssssss.com",
+    "created_at": "2015-06-19T20:46:47.041Z"
+  },
+  {
+    "user_name": "dsfasdf",
+    "first_name": "rsdffdasdf",
+    "last_name": "rsfsdfdfdf",
+    "email": "whattt@sup.com",
+    "created_at": "2015-06-19T15:51:02.488Z"
+  }
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "message": "There are no users to display."
+}
+```
+
 ## Posts
 
 ### Create post
