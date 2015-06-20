@@ -14,3 +14,5 @@ class GuessesController < ApplicationController
       render json: { errors: @guess.errors.full_messages },
     end
   end
+
+end
