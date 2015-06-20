@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def register
     passhash = self.password_encryption(params[:password])
+    binding.pry
     @user = User.new(user_name: params[:user_name],
                       first_name: params[:first_name],
                       last_name: params[:last_name],
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
 
   protected
   def password_encryption(password)
-    if !password.nil?
+    if !password.nil? && password != ""
       result = Digest::SHA1.hexdigest(password)
     else
       result = nil
