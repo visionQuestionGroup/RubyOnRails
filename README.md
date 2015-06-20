@@ -6,9 +6,9 @@ All access is over HTTPS, and access from the "https://vast-wildwood-6662.heroku
 
 ## Access Token
 
-Every request requires an authentication token to be provided in the header.
+Every request requires an authentication token to be provided in the header. Except for SIGN UP, LOGIN, and VIEW ALL POSTS.
 
-To do this make sure you set 'Access-Token' equal to the user's access token in every request except for SIGNUP and LOGIN.
+To do this make sure you set 'Access-Token' equal to the user's access token in every required request.
 
 ```
 ['Access-Token'] = 'f16395873f4bcee7ef5d46e531b9f659'
