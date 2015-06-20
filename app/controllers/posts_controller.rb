@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_with_token!, only: [:new, :show, :user_posts]
+  before_action :authenticate_with_token!
 
   def new
     @post = current_user.posts.new( image_url: params[:image_url],
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def all
-    @posts = Post.order(created_at: :desc).page(params[:page])
+    @posts = Post.where.not(user_id: current_user.id).order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'all.json.jbuilder', status: :ok
     else
