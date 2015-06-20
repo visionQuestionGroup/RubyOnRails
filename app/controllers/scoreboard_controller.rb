@@ -7,7 +7,7 @@ class ScoreboardController < ApplicationController
       render 'top_scores.json.jbuilder', status: :ok
     else
       render json: { message: "Sorry no scores to display." },
-        status: :not_found
+        status: :unprocessable_entity
     end
   end
 
