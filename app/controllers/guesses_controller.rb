@@ -2,10 +2,10 @@ class GuessesController < ApplicationController
   before_action :authenticate_with_token!
 
   def new
-    @guess = post.guess.new( user_id: params[:user_id],
-                            post_id: params[:post_id],
-                            guess: params[:guess],
-                            points: params[:points])
+    @guess = Guess.new( user_id: current_user.id,
+                        post_id: params[:post_id],
+                        guess: params[:guess],
+                      )
     if @guess.save
       render 'new.json.jbuilder', status: :created
     else
