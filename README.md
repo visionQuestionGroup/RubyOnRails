@@ -323,7 +323,7 @@ Response Status Code: 201
 
 {
   "user_name": "whatever",
-  "link_id": 22,
+  "post_id": 22,
   "guesses_left": 3,
   "won": false
 }
