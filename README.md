@@ -429,6 +429,12 @@ Path:
 
 `GET '/topscores'`
 
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 10 results per page |
+
 Example data successful response:
 
 ```json
@@ -452,6 +458,6 @@ Example data failure response:
 Response Status Code: TBD
 
 {
-  "error": "TBD"
+  "message": "Sorry no scores to display."
 }
 ```
