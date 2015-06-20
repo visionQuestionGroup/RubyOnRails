@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def register
     passhash = self.password_encryption(params[:password])
-    binding.pry
     @user = User.new(user_name: params[:user_name],
                       first_name: params[:first_name],
                       last_name: params[:last_name],
