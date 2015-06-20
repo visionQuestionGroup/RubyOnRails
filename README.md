@@ -379,6 +379,8 @@ Response Status Code: TBD
 
 ### User can guess
 
+Posting to this path will get a response back with information including whether the current user has won with their guess. It will also prevent users from making the same guess twice and a user will not be able to guess on a post that has already been solved by ANYONE else. Check the error messages example.
+
 Access-Token:
 
 Required.
@@ -400,10 +402,23 @@ Example data successful response:
 Response Status Code: 201
 
 {
-  "user_name": "whatever",
-  "post_id": 22,
-  "guesses_left": 3,
-  "won": false
+  "id": 30,
+  "guess_info": {
+    "guess": "money",
+    "won": false,
+    "number_of_guesses": 17,
+    "points": null,
+    "created_at": "2015-06-20T22:12:27.189Z"
+  },
+  "guesser": {
+    "user_name": "sherri01",
+    "first_name": "new",
+    "last_name": "mitch",
+    "email": "sherri@sherri01.com"
+  },
+  "post": {
+    "image_url": "https://rocktransformed.s3.amazonaws.com/testImage..."
+  }
 }
 ```
 
@@ -412,8 +427,13 @@ Example data failure response:
 ```json
 Response Status Code: TBD
 
-{
-  "error": "TBD"
+{ 
+  message: "You cannot make a guess! You're too slow" 
+}
+
+Response Status Code: TBD
+{ 
+  message: "You cannot make a guess on your own post. You are a cheater!" 
 }
 ```
 
