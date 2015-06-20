@@ -6,7 +6,7 @@ All access is over HTTPS, and access from the "https://vast-wildwood-6662.heroku
 
 ## Access Token
 
-Every request requires an authentication token to be provided in the header. Except for SIGN UP, LOGIN, and VIEW ALL POSTS.
+Assume that every request requires an access token unless stated otherwise. The access token must be provided in the header.
 
 To do this make sure you set 'Access-Token' equal to the user's access token in every required request.
 
@@ -17,6 +17,10 @@ To do this make sure you set 'Access-Token' equal to the user's access token in 
 ## Sign up and Login
 
 ### New user registration
+
+Access-Token:
+
+Not required.
 
 Path:
 
@@ -59,6 +63,10 @@ Response Status Code: TBD
 
 ### User login
 
+Access-Token:
+
+Not required.
+
 Path:
 
 `POST '/users/login'`
@@ -77,7 +85,7 @@ Response Status Code: 200 (TBD)
 
 {
   "user_name": "whatever",
-  "access_token": "102931afffksdfjklss"
+  "access_token": "f16395873f4bcee7ef5d46e531b9f659"
 }
 ```
 
@@ -92,6 +100,10 @@ Response Status Code: TBD
 ```
 
 ### Get all users
+
+Access-Token:
+
+Not required.
 
 Path:
 
@@ -141,6 +153,10 @@ Response Status Code: TBD
 
 ### Create post
 
+Access-Token:
+
+Required.
+
 Path: 
 
 `POST '/posts/new'`
@@ -189,6 +205,10 @@ Response Status Code: TBD
 
 ### Show a specific post of the current user
 
+Access-Token:
+
+Required.
+
 Path:
 
 `GET '/post/:id'`
@@ -226,6 +246,10 @@ Response Status Code: TBD
 ```
 
 ### List all of posts from current user
+
+Access-Token:
+
+Required.
 
 Path: 
 
@@ -287,6 +311,10 @@ Response Status Code: TBD
 ```
 
 ### Lists of posts from all users
+
+Access-Token:
+
+Required. This is to prevent you getting results of the current user in your list of posts.
 
 Path:
 
@@ -351,6 +379,10 @@ Response Status Code: TBD
 
 ### User can guess
 
+Access-Token:
+
+Required.
+
 Path: 
 
 `POST '/guesses'`
@@ -388,6 +420,10 @@ Response Status Code: TBD
 ## Scoreboard
 
 ### Get top 10 users for all time
+
+Access-Token:
+
+Not required.
 
 Path: 
 
