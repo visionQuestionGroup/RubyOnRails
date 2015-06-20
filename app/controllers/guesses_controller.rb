@@ -12,6 +12,7 @@ class GuessesController < ApplicationController
       render 'new.json.jbuilder', status: :created
     else
       render json: { errors: @guess.errors.full_messages },
+        status: :unprocessable_entity
     end
   end
 
