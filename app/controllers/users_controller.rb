@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def register
-    passhash = Digest::SHA1.hexdigest(params[:password])
+    passhash = self.password_encryption(params[:password])
     @user = User.new(user_name: params[:user_name],
                       first_name: params[:first_name],
                       last_name: params[:last_name],
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    passhash = Digest::SHA1.hexdigest(params[:password])
+    passhash = self.password_encryption(params[:password])
     @user = User.find_by(user_name: params[:user_name], password: passhash)
     if @user
       render 'login.json.jbuilder', status: :created
@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   end
 
   def get_users
-
     @users = User.order(created_at: :desc).page(params[:page])
     if @users.any?
       render 'users.json.jbuilder', status: :ok
@@ -34,6 +33,16 @@ class UsersController < ApplicationController
       render json: { message: 'There are no users to display.' },
         status: :unprocessable_entity
     end
-
   end
+
+  protected
+  def password_encryption(password)
+    if !password.nil?
+      result = Digest::SHA1.hexdigest(password)
+    else
+      result = nil
+    end
+    result
+  end
+
 end
