@@ -428,12 +428,12 @@ Example data failure response:
 Response Status Code: TBD
 
 { 
-  message: "You cannot make a guess! You're too slow" 
+  "message": "You cannot make a guess! You're too slow" 
 }
 
 Response Status Code: TBD
 { 
-  message: "You cannot make a guess on your own post. You are a cheater!" 
+  "message": "You cannot make a guess on your own post. You are a cheater!" 
 }
 ```
 
