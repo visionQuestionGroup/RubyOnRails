@@ -20,8 +20,20 @@ class UsersController < ApplicationController
     if @user
       render 'login.json.jbuilder', status: :created
     else 
-      render json: { message: 'Waszzzzupp' },
+      render json: { message: 'The username or password you supplied is incorrect.' },
         status: :unprocessable_entity
     end
+  end
+
+  def get_users
+
+    @users = User.order(created_at: :desc).page(params[:page])
+    if @users.any?
+      render 'users.json.jbuilder', status: :ok
+    else
+      render json: { message: 'There are no users to display.' },
+        status: :unprocessable_entity
+    end
+
   end
 end
