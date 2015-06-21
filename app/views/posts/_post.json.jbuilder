@@ -1,7 +1,7 @@
 json.(post, :id)
 
 json.post_info do
-  json.(post, :image_url, :answer, :created_at, :updated_at)
+  json.(post, :image_url, :created_at)
 end
 
 json.creator do

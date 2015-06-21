@@ -268,12 +268,10 @@ Response Status Code: 200
 
 [
   {
-    "id": 9,
+    "id": 10,
     "post_info": {
-      "image_url": "http://hello.com",
-      "answer": "hello",
-      "created_at": "2015-06-19T12:47:38.064Z",
-      "updated_at": "2015-06-19T12:47:38.064Z"
+      "image_url": "http://google.com/image.jpg",
+      "created_at": "2015-06-19T14:03:28.790Z"
     },
     "creator": {
       "user_name": "rick",
@@ -283,12 +281,132 @@ Response Status Code: 200
     }
   },
   {
+    "id": 9,
+    "post_info": {
+      "image_url": "http://hello.com",
+      "created_at": "2015-06-19T12:47:38.064Z"
+    },
+    "creator": {
+      "user_name": "rick",
+      "first_name": "Rick",
+      "last_name": "Sun",
+      "email": "rick@sunden.com"
+    }
+  }
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "message": "This user does not have any posts."
+}
+```
+
+### List all of posts made by the current user that have not been solved
+
+Access-Token:
+
+Required.
+
+Path: 
+
+`GET '/posts/user/notsolved'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
+  {
     "id": 10,
     "post_info": {
       "image_url": "http://google.com/image.jpg",
-      "answer": "yep that is correct",
-      "created_at": "2015-06-19T14:03:28.790Z",
-      "updated_at": "2015-06-19T14:03:28.790Z"
+      "created_at": "2015-06-19T14:03:28.790Z"
+    },
+    "creator": {
+      "user_name": "rick",
+      "first_name": "Rick",
+      "last_name": "Sun",
+      "email": "rick@sunden.com"
+    }
+  },
+  {
+    "id": 9,
+    "post_info": {
+      "image_url": "http://hello.com",
+      "created_at": "2015-06-19T12:47:38.064Z"
+    },
+    "creator": {
+      "user_name": "rick",
+      "first_name": "Rick",
+      "last_name": "Sun",
+      "email": "rick@sunden.com"
+    }
+  }
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "message": "This user does not have any posts."
+}
+```
+
+### List all of posts made by the current user that have been solved
+
+Access-Token:
+
+Required.
+
+Path: 
+
+`GET '/posts/user/solved'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
+  {
+    "id": 10,
+    "post_info": {
+      "image_url": "http://google.com/image.jpg",
+      "created_at": "2015-06-19T14:03:28.790Z"
+    },
+    "creator": {
+      "user_name": "rick",
+      "first_name": "Rick",
+      "last_name": "Sun",
+      "email": "rick@sunden.com"
+    }
+  },
+  {
+    "id": 9,
+    "post_info": {
+      "image_url": "http://hello.com",
+      "created_at": "2015-06-19T12:47:38.064Z"
     },
     "creator": {
       "user_name": "rick",
@@ -319,6 +437,136 @@ Not required.
 Path:
 
 `GET '/posts/all'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
+  {
+    "id": 33,
+    "post_info": {
+      "image_url": "http://waat.com/image.jprg",
+      "answer": "hello",
+      "created_at": "2015-06-19T12:47:38.064Z",
+      "updated_at": "2015-06-19T12:47:38.064Z"
+    },
+    "creator": {
+      "user_name": "Hey",
+      "first_name": "John",
+      "last_name": "What",
+      "email": "john@gmail.com"
+    }
+  },
+  {
+    "id": 22,
+    "post_info": {
+      "image_url": "http://google.com/image.jpg",
+      "answer": "answer",
+      "created_at": "2015-06-19T14:03:28.790Z",
+      "updated_at": "2015-06-19T14:03:28.790Z"
+    },
+    "creator": {
+      "user_name": "Mate",
+      "first_name": "Jason",
+      "last_name": "Derulo",
+      "email": "wut@wut.com"
+    }
+  }
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "message": "There are no posts."
+}
+```
+
+### Lists of posts that the current user can play
+
+Access-Token:
+
+Required.
+
+Path:
+
+`GET '/posts/all/playable'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| page | integer | defaults to 1, 25 results per page |
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+[
+  {
+    "id": 33,
+    "post_info": {
+      "image_url": "http://waat.com/image.jprg",
+      "answer": "hello",
+      "created_at": "2015-06-19T12:47:38.064Z",
+      "updated_at": "2015-06-19T12:47:38.064Z"
+    },
+    "creator": {
+      "user_name": "Hey",
+      "first_name": "John",
+      "last_name": "What",
+      "email": "john@gmail.com"
+    }
+  },
+  {
+    "id": 22,
+    "post_info": {
+      "image_url": "http://google.com/image.jpg",
+      "answer": "answer",
+      "created_at": "2015-06-19T14:03:28.790Z",
+      "updated_at": "2015-06-19T14:03:28.790Z"
+    },
+    "creator": {
+      "user_name": "Mate",
+      "first_name": "Jason",
+      "last_name": "Derulo",
+      "email": "wut@wut.com"
+    }
+  }
+]
+```
+
+Example data failure response:
+
+```json
+Response Status Code: TBD
+
+{
+  "message": "There are no posts."
+}
+```
+
+### Lists of posts that the current user cannot play
+
+Access-Token:
+
+Required.
+
+Path:
+
+`GET '/posts/all/unplayable'`
 
 Parameters:
 
