@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_with_token!, only: [:new, :show, :user_posts]
+  before_action :authenticate_with_token!, only: [:new, :show, :user_posts, 
+                                                  :user_posts_solved, :user_posts_not_solved,
+                                                  :all_playable, :all_unplayable
+                                                  ]
 
   def new
     @post = current_user.posts.new( image_url: params[:image_url],
