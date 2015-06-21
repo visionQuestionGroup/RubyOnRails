@@ -63,7 +63,8 @@ class PostsController < ApplicationController
   end
 
   def all_playable
-    @posts = Post.where(solution: nil).order(created_at: :desc).page(params[:page])
+    @posts = Post.where(solution: nil).where.not(user_id: current_user.id)
+                  .order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'all.json.jbuilder', status: :ok
     else
@@ -73,7 +74,8 @@ class PostsController < ApplicationController
   end
 
   def all_unplayable
-    @posts = Post.where.not(solution: nil).order(created_at: :desc).page(params[:page])
+    @posts = Post.where.not(solution: nil).where.not(user_id: current_user.id)
+                  .order(created_at: :desc).page(params[:page])
     if @posts.any?
       render 'all.json.jbuilder', status: :ok
     else
