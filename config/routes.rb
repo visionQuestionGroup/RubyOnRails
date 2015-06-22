@@ -61,6 +61,8 @@ Rails.application.routes.draw do
   post '/users/register', to: 'users#register'
   post '/users/login', to: 'users#login'
   get '/users', to: 'users#get_users'
+  get '/user', to: 'users#get_user'
+  delete '/user', to: 'users#delete_user'
 
   # POST IMAGE ROUTES
 
