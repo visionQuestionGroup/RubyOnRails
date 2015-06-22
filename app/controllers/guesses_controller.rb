@@ -38,9 +38,14 @@ class GuessesController < ApplicationController
     end
 
     def not_same_user_as_post
-      post_user = @guess.post.user
-      if post && current_user != post_user
-        true
+      post = @guess.post.user
+      if !@guess.post
+        post_user = @guess.post.user
+        if post_user && current_user != post_user
+          true
+        else
+          false
+        end
       else
         false
       end
