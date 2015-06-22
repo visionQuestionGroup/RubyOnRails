@@ -170,10 +170,13 @@ Path:
 Example data successful response:
 
 ```json
-Response Status Code: 200
 
-{ 
-  "message": "User has been deleted" 
+{
+  "user_name": "dsfasdf",
+  "first_name": "rsdffdasdf",
+  "last_name": "rsfsdfdfdf",
+  "email": "whattt@sup.com",
+  "created_at": "2015-06-19T15:51:02.488Z"
 }
 ```
 
@@ -208,12 +211,8 @@ Example data successful response:
 ```json
 Response Status Code: 200
 
-{
-  "user_name": "dsfasdf",
-  "first_name": "rsdffdasdf",
-  "last_name": "rsfsdfdfdf",
-  "email": "whattt@sup.com",
-  "created_at": "2015-06-19T15:51:02.488Z"
+{ 
+  "message": "User has been deleted" 
 }
 ```
 
