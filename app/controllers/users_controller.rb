@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_with_token!, only: [:get_user, :delete_user]
+
   def register
     passhash = self.password_encryption(params[:password])
     @user = User.new(user_name: params[:user_name],
@@ -32,6 +34,22 @@ class UsersController < ApplicationController
     else
       render json: { message: 'There are no users to display.' },
         status: :unprocessable_entity
+    end
+  end
+
+  def get_user
+    @user = current_user
+    render 'user.json.jbuilder', status: :ok
+  end
+
+  def delete_user
+    passhash = self.password_encryption(params[:password])
+    if passhash == current_user.password
+      current_user.destroy
+      render json: { message: 'User has been deleted'},
+        status: :ok
+    else
+      render json: { message: 'Password you supplied is not correct' }
     end
   end
 
