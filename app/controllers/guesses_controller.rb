@@ -30,7 +30,7 @@ class GuessesController < ApplicationController
   protected
     def not_solved
       post = @guess.post
-      if !post.solution
+      if post && !post.solution
         true
       else
         false
@@ -39,7 +39,7 @@ class GuessesController < ApplicationController
 
     def not_same_user_as_post
       post_user = @guess.post.user
-      if current_user != post_user
+      if post && current_user != post_user
         true
       else
         false
