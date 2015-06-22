@@ -14,7 +14,7 @@ To do this make sure you set 'Access-Token' equal to the user's access token in 
 ['Access-Token'] = 'f16395873f4bcee7ef5d46e531b9f659'
 ```
 
-## Sign up and Login
+## Sign up, Login, User(s) info and Delete user
 
 ### New user registration
 
