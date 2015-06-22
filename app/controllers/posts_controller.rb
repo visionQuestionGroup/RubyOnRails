@@ -16,13 +16,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = current_user.posts.find_by(id: params[:id])
-    if @post
-      render 'show.json.jbuilder', status: :ok
-    else
-      render json: { message: "This user does not have a post with that ID." },
-        status: :not_found
-    end
+    @post = current_user.posts.find(params[:id])
+    render 'show.json.jbuilder', status: :ok
   end
 
   def user_posts
