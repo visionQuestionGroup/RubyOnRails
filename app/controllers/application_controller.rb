@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authenticate_with_token!
     unless current_user
       render json: { message: "Access Token not found." },
-        status: :unauthenticated
+        status: :unauthorized
     end
   end
 end

@@ -54,11 +54,19 @@ Response Status Code: 201
 Example data failure response:
 
 ```json
-Response Status Code: TBD
+Response Status Code: 422
 
 {
-  "error": "TBD"
+  "errors": [
+    "Password can't be blank",
+    "Email can't be blank",
+    "Email is not a valid email.",
+    "User name can't be blank",
+    "First name can't be blank",
+    "Last name can't be blank"
+  ]
 }
+
 ```
 
 ### User login
@@ -81,7 +89,7 @@ Parameters:
 Example data successful response:
 
 ```json
-Response Status Code: 200 (TBD)
+Response Status Code: 200
 
 {
   "user_name": "whatever",
@@ -92,10 +100,10 @@ Response Status Code: 200 (TBD)
 Example data failure response:
 
 ```json
-Response Status Code: TBD
+Response Status Code: 422
 
 {
-  "error": "TBD"
+  "message":"The username or password you supplied is incorrect."
 }
 ```
 
@@ -107,7 +115,7 @@ Not required.
 
 Path:
 
-`Get '/users'`
+`GET '/users'`
 
 Parameters:
 
@@ -142,12 +150,91 @@ Response Status Code: 200
 Example data failure response:
 
 ```json
-Response Status Code: TBD
+Response Status Code: 404
 
 {
   "message": "There are no users to display."
 }
 ```
+
+### Get current user info
+
+Access-Token:
+
+Required.
+
+Path:
+
+`GET '/user'`
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+{ 
+  "message": "User has been deleted" 
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: 404
+
+{
+  "message": "There are no users to display."
+}
+```
+
+### Delete current user
+
+Access-Token:
+
+Required.
+
+Path:
+
+`DELETE '/user'`
+
+Parameters:
+
+| name | type    | description                        |
+|------|---------|------------------------------------|
+| password | string | user has to supply password |
+
+Example data successful response:
+
+```json
+Response Status Code: 200
+
+{
+  "user_name": "dsfasdf",
+  "first_name": "rsdffdasdf",
+  "last_name": "rsfsdfdfdf",
+  "email": "whattt@sup.com",
+  "created_at": "2015-06-19T15:51:02.488Z"
+}
+```
+
+Example data failure response:
+
+```json
+Response Status Code: 401
+
+{
+  "message": "Access Token not found."
+}
+```
+
+```json
+Response Status Code: 401
+
+{
+  "message": "Password you supplied is not correct"
+}
+```
+
 
 ## Posts
 
