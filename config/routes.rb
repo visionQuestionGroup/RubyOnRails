@@ -67,7 +67,11 @@ Rails.application.routes.draw do
   post '/posts/new', to: 'posts#new'
   get '/post/:id', to: 'posts#show'
   get '/posts/user', to: 'posts#user_posts'
+  get '/posts/user/notsolved', to: 'posts#user_posts_not_solved'
+  get '/posts/user/solved', to: 'posts#user_posts_solved'
   get '/posts/all', to: 'posts#all'
+  get '/posts/all/playable', to: 'posts#all_playable'
+  get '/posts/all/unplayable', to: 'posts#all_unplayable'
 
   # GUESSES ROUTES
 
@@ -76,6 +80,7 @@ Rails.application.routes.draw do
   # SCOREBOARD ROUTES
 
   get '/topscores', to: 'scoreboard#top_scores'
+  get '/user/score', to: 'scoreboard#total_user_score'
 
   # HOME PAGE
 
