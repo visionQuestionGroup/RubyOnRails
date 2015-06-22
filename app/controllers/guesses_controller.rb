@@ -31,10 +31,11 @@ class GuessesController < ApplicationController
     def not_solved
       post = @guess.post
       if post && !post.solution
-        true
+        result = true
       else
-        false
+       result = false
       end
+      result
     end
 
     def not_same_user_as_post
@@ -42,13 +43,14 @@ class GuessesController < ApplicationController
       if !@guess.post
         post_user = @guess.post.user
         if post_user && current_user != post_user
-          true
+          result = true
         else
-          false
+          result = false
         end
       else
-        false
+        result = true
       end
+      result
     end
 end
 
