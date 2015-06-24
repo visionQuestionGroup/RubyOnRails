@@ -5,7 +5,11 @@ class Post < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :answer, presence: true
+
   validates :image_url, presence: true
-  validates :last_name, format: { with: IMAGE_REGEX, 
+  validates :image_url, format: { with: IMAGE_REGEX, 
                                   message: "not a valid url for an image"}
+  # removing this last line. Think it is a copy/paste error.
+  # validates :last_name, format: { with: IMAGE_REGEX, 
+                                  # message: "not a valid url for an image"}                               
 end
